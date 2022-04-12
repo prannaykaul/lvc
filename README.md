@@ -15,6 +15,6 @@ Code for our paper: [Label, Verify, Correct: A Simple Few-Shot Object Detection 
 > While benchmarking on PASCAL VOC and MS-COCO,
 > our method achieves state-of-the-art or second-best performance compared to existing approaches across all number of shots.*
 
-![Alt text](/assets/main_img.pdf")
+![Alt text](/assets/main_img.pdf)
 
 ## Code Coming Soon!
