@@ -1,0 +1,20 @@
+_BASE_: "../Base-RCNN-FPN.yaml"
+MODEL:
+  PIXEL_MEAN: [123.675, 116.280, 103.530]
+  PIXEL_STD: [58.395, 57.120, 57.375]
+DATASETS:
+  TRAIN: ('coco_trainval_all',)
+  DT_PATH: ('checkpoints/coco/faster_rcnn/faster_rcnn_R_50_FPN_ft_all_30shot_aug_ftmore_dropout/inference/coco_instances_trainval_results_score_max10_min08_full_all.json'
+QUERY_EXPAND:
+  GET_CROPS: True
+  KNN: 10
+  NN_MODEL: dino_vits8
+OUTPUT_DIR: "checkpoints/coco/faster_rcnn/faster_rcnn_R_50_FPN_ft_all_30shot_aug_ftmore_dropout"
+INPUT:
+  FORMAT: "RGB"
+  COLOR_JITTER: True
+  MOSAIC: 0.5
+  MOSAIC49SPLIT: 1.0
+  CROP:
+    ENABLED: True
+    SIZE: [0.7,0.7]

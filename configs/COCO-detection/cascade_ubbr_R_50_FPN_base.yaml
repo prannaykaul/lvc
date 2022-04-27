@@ -1,0 +1,40 @@
+_BASE_: "../Base-RCNN-FPN.yaml"
+MODEL:
+  WEIGHTS: "detectron2://ImageNetPretrained/MSRA/R-50.pkl"
+  META_ARCHITECTURE: "GeneralizedRCNN"
+  MASK_ON: False
+  RESNETS:
+    DEPTH: 50
+  ROI_HEADS:
+    NAME: "CascadeROIHeads"
+    NUM_CLASSES: 60
+    OUTPUT_LAYER: "BoxOnlyLayersCascade"
+    PROPOSAL_APPEND_GT: False
+    POSITIVE_FRACTION: 1.0
+    BATCH_SIZE_PER_IMAGE: 64
+    IOU_THRESHOLDS: [0.3,]
+  ROI_BOX_HEAD:
+    NUM_FC: 3
+    CLS_AGNOSTIC_BBOX_REG: True
+  ROI_BOX_CASCADE_HEAD:
+    IOUS: [0.3,0.5,0.7]
+  BACKBONE:
+    FREEZE_AT: 2
+  PROPOSAL_GENERATOR:
+    NAME: "RBG"
+  LOAD_PROPOSALS: True
+DATASETS:
+  TRAIN: ('coco_trainval_base',)
+  FS_TRAIN: ('coco_trainval_base',)
+  TEST: ('coco_test_base',)
+INPUT:
+  CROP:
+    ENABLED: True
+    SIZE: [0.8, 0.8]
+SOLVER:
+  IMS_PER_BATCH: 16
+  STEPS: (90000, 100000)
+  MAX_ITER: 110000
+  CHECKPOINT_PERIOD: 10000
+  WARMUP_ITERS: 1000
+OUTPUT_DIR: "checkpoints/coco/cascade_ubbr/cascade_ubbr_R_50_FPN_base"
