@@ -73,6 +73,9 @@ we have modified this code and a self-contained version exists in this repo.
 ```bash
 python -m pip install -e .
 ```
+The installation of our Detectron2 code is identical to the official Detectron2 code,
+so if you run into errors at the above step please see the installation docs for Detectron2,
+specifically the [common issues](https://github.com/facebookresearch/detectron2/blob/main/INSTALL.md#common-installation-issues).
 
 * Install all other dependencies
 ```bash
