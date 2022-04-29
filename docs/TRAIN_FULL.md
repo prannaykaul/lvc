@@ -1,7 +1,7 @@
 # LVC Training Instructions
 
 LVC is trained in multiple stages some of which have sub-stages. In this file, training an LVC model for the COCO 30-shot task will be used as an example.
-For a full, single file with all the below command contained, see [coco_full_run.sh](scripts/coco_full_run.sh)
+For a full, single file with all the below command contained, see [coco_full_run.sh](../scripts/coco_full_run.sh)
 
 ## Part 1: Training a baseline detector
 
