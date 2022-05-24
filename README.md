@@ -1,5 +1,5 @@
 # Label, Verify, Correct: A Simple Few-Shot Object Detection Method
-Code for our paper: [Label, Verify, Correct: A Simple Few-Shot Object Detection Method](https://arxiv.org/abs/2110.06207)
+Code for our paper: [Label, Verify, Correct: A Simple Few-Shot Object Detection Method](https://arxiv.org/abs/2112.05749)
 
 > **Abstract:** *The objective of this paper is few-shot object detection (FSOD)
 > – the task of expanding an object detector for a new category given only a few instances for training.
@@ -100,7 +100,7 @@ python -m pip install -r requirements.txt
   - **train_net_reg_qe.py**: Script to run box corrector.
   - **create_coco_dataset_from_dets_all.py**: Get candidates from baseline detections.
   - **run_nearest_neighbours.py**: Run label verification.
-  - **combine*.py**: Various tools for doing .json file manipulation.
+  - **combine.py**: Various tools for doing .json file manipulation.
   - **ckpt_surgery.py**: Surgery on checkpoints.
 
 
@@ -114,4 +114,4 @@ See [datasets/README.md](datasets/README.md) for more details.
 ## Getting Started
 ### Full Training & Evaluation in Command Line
 LVC is conceptually simple but the full run involves many commands.
-For a full explanation of how to train for LVC, see [TRAIN_INST.md](docs/TRAIN_FULL.md).
+For a full explanation of how to train for LVC, see [TRAIN_FULL.md](docs/TRAIN_FULL.md).
