@@ -1,5 +1,5 @@
 # Label, Verify, Correct: A Simple Few-Shot Object Detection Method
-Code for our paper: [Label, Verify, Correct: A Simple Few-Shot Object Detection Method](https://arxiv.org/abs/2110.06207)
+Code for our paper: [Label, Verify, Correct: A Simple Few-Shot Object Detection Method](https://arxiv.org/abs/2112.05749)
 
 > **Abstract:** *The objective of this paper is few-shot object detection (FSOD)
 > – the task of expanding an object detector for a new category given only a few instances for training.
