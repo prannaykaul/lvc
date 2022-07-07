@@ -135,13 +135,9 @@ def default_argument_parser():
     parser.add_argument(
         "--dist-url", default="tcp://127.0.0.1:{}".format(port)
     )
+
     parser.add_argument(
-        "--opts_lin",
-        help="Modify config options of cfg_lin using the command-line",
-        default=None,
-        nargs='+')
-    parser.add_argument(
-        "--opts",
+        "opts",
         help="Modify config options using the command-line",
         default=None,
         nargs=argparse.REMAINDER,
