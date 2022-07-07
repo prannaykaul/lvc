@@ -61,15 +61,15 @@ python -m tools.train_net \
 python -m tools.train_net_reg \
     --config-file configs/COCO-detection/cascade_ubbr_R_50_FPN_base.yaml \
     --num-gpus 4 \
-    DATASETS.PROPOSALS_FILES_TRAIN "('checkpoints/coco/faster_rcnn/faster_rcnn_R_50_FPN_base/inference/coco_proposals_trainval_results.pkl',)" \
-    DATASETS.PROPOSALS_FILES_TEST "('checkpoints/coco/faster_rcnn/faster_rcnn_R_50_FPN_base/inference/coco_proposals_test_results.pkl',)"
+    DATASETS.PROPOSAL_FILES_TRAIN "('checkpoints/coco/faster_rcnn/faster_rcnn_R_50_FPN_base/inference/coco_proposals_trainval_results.pkl',)" \
+    DATASETS.PROPOSAL_FILES_TEST "('checkpoints/coco/faster_rcnn/faster_rcnn_R_50_FPN_base/inference/coco_proposals_test_results.pkl',)"
 
 
 python -m tools.train_net_reg \
     --config-file configs/COCO-detection/cascade_ubbr_R_50_FPN_ft_all_30shot_aug_ftmore.yaml \
     --num-gpus 4 \
-    DATASETS.PROPOSALS_FILES_TRAIN "('checkpoints/coco/faster_rcnn/faster_rcnn_R_50_FPN_ft_all_30shot_aug_ftmore_dropout/inference/coco_proposals_trainval_results.pkl',)" \
-    DATASETS.PROPOSALS_FILES_TEST "('checkpoints/coco/faster_rcnn/faster_rcnn_R_50_FPN_ft_all_30shot_aug_ftmore_dropout/inference/coco_proposals_test_results.pkl',)"
+    DATASETS.PROPOSAL_FILES_TRAIN "('checkpoints/coco/faster_rcnn/faster_rcnn_R_50_FPN_ft_all_30shot_aug_ftmore_dropout/inference/coco_proposals_trainval_results.pkl',)" \
+    DATASETS.PROPOSAL_FILES_TEST "('checkpoints/coco/faster_rcnn/faster_rcnn_R_50_FPN_ft_all_30shot_aug_ftmore_dropout/inference/coco_proposals_test_results.pkl',)"
 
 
 # ##### CANDIDATE SOURCING

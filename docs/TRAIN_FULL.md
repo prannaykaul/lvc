@@ -93,8 +93,8 @@ Train a box corrector on base data using the base detector proposals:
 python -m tools.train_net_reg \
     --config-file configs/COCO-detection/cascade_ubbr_R_50_FPN_base.yaml \
     --num-gpus 4 \
-    DATASETS.PROPOSALS_FILES_TRAIN "('checkpoints/coco/faster_rcnn/faster_rcnn_R_50_FPN_base/inference/coco_proposals_trainval_results.pkl',)" \
-    DATASETS.PROPOSALS_FILES_TEST "('checkpoints/coco/faster_rcnn/faster_rcnn_R_50_FPN_base/inference/coco_proposals_test_results.pkl',)"
+    DATASETS.PROPOSAL_FILES_TRAIN "('checkpoints/coco/faster_rcnn/faster_rcnn_R_50_FPN_base/inference/coco_proposals_trainval_results.pkl',)" \
+    DATASETS.PROPOSAL_FILES_TEST "('checkpoints/coco/faster_rcnn/faster_rcnn_R_50_FPN_base/inference/coco_proposals_test_results.pkl',)"
 ```
 
 ### Part 2, Step 4: Box Corrector Finetuning
@@ -103,8 +103,8 @@ Finetune the box corrector on base and novel data using the finetuned detector p
 python -m tools.train_net_reg \
     --config-file configs/COCO-detection/cascade_ubbr_R_50_FPN_ft_all_30shot_aug_ftmore.yaml \
     --num-gpus 4 \
-    DATASETS.PROPOSALS_FILES_TRAIN "('checkpoints/coco/faster_rcnn/faster_rcnn_R_50_FPN_ft_all_30shot_aug_ftmore_dropout/inference/coco_proposals_trainval_results.pkl',)" \
-    DATASETS.PROPOSALS_FILES_TEST "('checkpoints/coco/faster_rcnn/faster_rcnn_R_50_FPN_ft_all_30shot_aug_ftmore_dropout/inference/coco_proposals_test_results.pkl',)"
+    DATASETS.PROPOSAL_FILES_TRAIN "('checkpoints/coco/faster_rcnn/faster_rcnn_R_50_FPN_ft_all_30shot_aug_ftmore_dropout/inference/coco_proposals_trainval_results.pkl',)" \
+    DATASETS.PROPOSAL_FILES_TEST "('checkpoints/coco/faster_rcnn/faster_rcnn_R_51_FPN_ft_all_30shot_aug_ftmore_dropout/inference/coco_proposals_test_results.pkl',)"
 ```
 
 *Now we have our box corrector model trained for use during the pseudo-annotation process*
