@@ -18,8 +18,11 @@ VOC20{07,12}/
 coco/
   annotations/
     instances_{train,val}2014.json
+    image_info_unlabeled2017.json
   {train,val}2014/
     # image files that are mentioned in the corresponding json
+  unlabeled2017/
+    # image files that are mentioned in the corresponding json for unlabeled
 ```
 <!-- 
 ## Expected dataset structure for LVIS:
