@@ -79,7 +79,7 @@ python -m tools.train_net \
     --config-file configs/COCO-detection/faster_rcnn_R_50_FPN_ft_all_30shot_aug_ftmore_dropout.yaml \
     --resume \
     --eval-only \
-    DATASETS.TEST "('coco_trainval_all', 'coco_unlabelled_all')"
+    DATASETS.TEST "('coco_trainval_all', 'coco_unlabeled_all')"
 
 # We only want detections with score > x and we want to create a new COCO-style dataset for the candidates
 python -m tools.create_coco_dataset_from_dets_all \
