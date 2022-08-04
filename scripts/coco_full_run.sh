@@ -115,7 +115,7 @@ python -m tools.run_nearest_neighbours \
     --eval-only \
     --opts \
     DATASETS.DT_PATH "('checkpoints/coco/faster_rcnn/faster_rcnn_R_50_FPN_ft_all_30shot_aug_ftmore_dropout/inference/coco_instances_trainval_results_score_max10_min08_full_all.json',)" \
-    DATASETS.NN_DSET "('coco_trainval_all_30shot',)" \
+    QUERY_EXPAND.NN_DSET "('coco_trainval_all_30shot',)" \
     QUERY_EXPAND.KNN 10 \
     OUTPUT_DIR "checkpoints/coco/faster_rcnn/faster_rcnn_R_50_FPN_ft_all_30shot_aug_ftmore_dropout"
 
@@ -126,7 +126,7 @@ python -m tools.run_nearest_neighbours \
     --eval-only \
     --opts \
     DATASETS.DT_PATH "('checkpoints/coco/faster_rcnn/faster_rcnn_R_50_FPN_ft_all_30shot_aug_ftmore_dropout/inference/coco_instances_unlabeled_results_score_max10_min08_full_all.json',)" \
-    DATASETS.NN_DSET "('coco_trainval_all_30shot',)" \
+    QUERY_EXPAND.NN_DSET "('coco_trainval_all_30shot',)" \
     QUERY_EXPAND.KNN 10 \
     OUTPUT_DIR "checkpoints/coco/faster_rcnn/faster_rcnn_R_50_FPN_ft_all_30shot_aug_ftmore_dropout"
 
@@ -139,7 +139,8 @@ python -m tools.train_net_reg_qe \
     --eval-only \
     DATASETS.DT_PATH "('checkpoints/coco/faster_rcnn/faster_rcnn_R_50_FPN_ft_all_30shot_aug_ftmore_dropout/inference/coco_instances_trainval_results_score_max10_min08_full_all_dino_vits8_10_cosine.json',)" \
     MODEL.META_ARCHITECTURE "GeneralizedRCNNRegOnly" \
-    QUERY_EXPAND.ENABLED True
+    QUERY_EXPAND.ENABLED True \
+    MODEL.LOAD_PROPOSALS False
 
 python -m tools.train_net_reg_qe \
     --config-file configs/COCO-detection/cascade_ubbr_R_50_FPN_ft_all_30shot_aug_ftmore.yaml \
@@ -149,7 +150,8 @@ python -m tools.train_net_reg_qe \
     --eval-only \
     DATASETS.DT_PATH "('checkpoints/coco/faster_rcnn/faster_rcnn_R_50_FPN_ft_all_30shot_aug_ftmore_dropout/inference/coco_instances_unlabeled_results_score_max10_min08_full_all_dino_vits8_10_cosine.json',)" \
     MODEL.META_ARCHITECTURE "GeneralizedRCNNRegOnly" \
-    QUERY_EXPAND.ENABLED True
+    QUERY_EXPAND.ENABLED True \
+    MODEL.LOAD_PROPOSALS False
 
 # Some dataset sundries
 # Make the ubbr results into a coco data
